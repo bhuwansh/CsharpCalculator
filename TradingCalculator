@@ -1,0 +1,49 @@
+
+using System;
+
+public class TradingCalculator
+{
+    public static void Main(string[] args)
+    {
+         Console.Write ("welcome to risk managemnt calculator \n");
+        
+        //  Console.Write ("Enter your trading capital (RS) : ");
+        //  var tradingCapital = Console.ReadLine();
+     
+        //  Console.Write("Enter stock symbol : ");
+        //  var stock = Console.ReadLine();
+        
+         Console.Write("Enter Entry : ");
+         var entry =decimal.Parse(Console.ReadLine());
+        
+         Console.Write("Enter stop loss : ");
+         var sl = decimal.Parse(Console.ReadLine());
+         
+           Console.Write("Enter Risk/Trade : ");
+         var RT = decimal.Parse(Console.ReadLine());
+         
+         //1. calculate price differnece  : entry - sl
+         Console.Write("Price Difference is : ");
+         var diff = entry - sl;
+         Console.Write(diff + "\n");
+         
+         //2. calculate qunatity  : RiskTrade / Diff
+         Console.Write("Quantity : ");
+         var Quantity = RT / diff;
+         Console.Write(Quantity + "\n");
+         
+        //3. calculate Targets :   
+          Console.Write("Targets are : \n");
+         var T1 = (entry + (diff*2));
+         var T2 = (entry + (diff*3));
+         Console.Write("target 1 :" + T1 + "\n");
+         Console.Write("target 2 :" + T2 + "\n");
+         
+        //  4. calculate investing amount : entry price * quantity 
+         Console.Write("Investment  :");
+         var Investment = (entry * Quantity);
+         Console.Write( Investment + "\n");
+         
+         
+    }
+}
